@@ -1,5 +1,11 @@
 {
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.25.9"
   }
 }
