@@ -5,7 +5,7 @@ class PdpRenderListObject extends Component {
         super(props);
         this.state = {
             PdpStudents :[
-                {PdpId:1,PdpName:"Pham Dinh Phung ", PdpAge:46},
+                {PdpId:1,PdpName:"Trịnh Văn Chung", PdpAge:46},
                 {PdpId:2,PdpName:"Nguyễn Quang A", PdpAge:20},
                 {PdpId:3,PdpName:"Nguyễn Quang B", PdpAge:22},
                 {PdpId:4,PdpName:"Nguyễn Quang C", PdpAge:21},
