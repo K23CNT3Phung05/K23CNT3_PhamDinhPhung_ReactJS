@@ -1,44 +1,32 @@
 import React, { Component } from 'react';
 
-class PdpControl extends Component {
-    render() {
-        return (
-            <div className="card-header">
-                  <div className="row">
-                    <div className="col-3 ">
-                      <button
-                        type="button"
-                        className="btn btn-primary btn-icon-text"
-                      >
-                        Thêm mới sinh viên
-                      </button>
-                    </div>
-                    <div className="col-6 ">
-                      <form className="search-form" action="#">
-                        <i className="icon-search" />
-                        <input
-                          type="search"
-                          className="form-control"
-                          placeholder="Search Here"
-                          title="Search here"
-                        />
-                        <button className="btn btn-primary btn-icon-text">
-                          Tìm kiếm
-                        </button>
-                      </form>
-                    </div>
-                    <div className="col-3 d-flex align-items-center">
-                      <select className="form-control">
-                        <option value="">Sắp xếp</option>
-                        <option value="">ABC def</option>
-                        <option value="">ABC def</option>
-                        <option value="">ABC def</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-        );
-    }
-}
+export default class PdpControl extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { searchKeyword: '' };
+  }
 
-export default PdpControl;
+  // Xử lý thay đổi trong ô tìm kiếm
+  handleSearchChange = (event) => {
+    const keyword = event.target.value;
+    this.setState({ searchKeyword: keyword });
+    this.props.onPdpHandleSearch(keyword); // Gửi từ khóa về component cha
+  };
+
+  render() {
+    return (
+      <div className="d-flex justify-content-between mb-3">
+        <input 
+          type="text" 
+          className="form-control w-50" 
+          placeholder="🔍 Tìm kiếm sinh viên..." 
+          value={this.state.searchKeyword} 
+          onChange={this.handleSearchChange}
+        />
+        <button className="btn btn-primary" onClick={this.props.onPdpHandleAddNew}>
+          ➕ Thêm mới
+        </button>
+      </div>
+    );
+  }
+}
