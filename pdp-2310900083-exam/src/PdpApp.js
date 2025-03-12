@@ -1,38 +1,38 @@
 import React, { useState } from "react";
-import PdpMemberList from "./components/PdpMemberList";
-import PdpMemberAdd from "./components/PdpMemberAdd";
+import ProductList from "./components/PdpProductList";
+import ProductAdd from "./components/PdpProductAdd";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const PdpApp = () => {
-  // Danh sách thành viên
-  const [members, setMembers] = useState([
-    { id: "230001", fullname: "Phạm Đình Phùng", username: "Phùng", password: "7979" },
-    { id: "230002", fullname: "Vũ Thị Hồng Hạnh", username: "Hạnh", password: "abcdef" },
-    { id: "230003", fullname: "Lê Văn Nam", username: "Nam", password: "6789" },
+  // Danh sách sản phẩm
+  const [products, setProducts] = useState([
+    { id: "SP001", name: "Laptop Dell XPS", price: 211000000, quantity: 10 },
+    { id: "SP002", name: "iPhone 15 Pro", price: 277990000, quantity: 1212 },
+    { id: "SP003", name: "Tai nghe Sony WH-1000XM5", price: 7990000, quantity: 15 },
   ]);
 
-  // Thêm thành viên
-  const addMember = (member) => {
-    setMembers([...members, member]);
+  // Thêm sản phẩm
+  const addProduct = (product) => {
+    setProducts([...products, product]);
   };
 
-  // Xóa thành viên
-  const removeMember = (id) => {
-    if (window.confirm("Bạn có chắc chắn muốn xóa thành viên này?")) {
-      setMembers(members.filter((member) => member.id !== id));
+  // Xóa sản phẩm
+  const removeProduct = (id) => {
+    if (window.confirm("Bạn có chắc chắn muốn xóa sản phẩm này?")) {
+      setProducts(products.filter((product) => product.id !== id));
     }
   };
 
-  // Cập nhật thành viên
-  const updateMember = (updatedMember) => {
-    setMembers(members.map((member) => (member.id === updatedMember.id ? updatedMember : member)));
+  // Cập nhật sản phẩm
+  const updateProduct = (updatedProduct) => {
+    setProducts(products.map((product) => (product.id === updatedProduct.id ? updatedProduct : product)));
   };
 
   return (
     <div className="container mt-4">
-      <h1 className="text-primary text-center">📋 Quản lý Thành viên</h1>
-      <PdpMemberAdd addMember={addMember} />
-      <PdpMemberList members={members} removeMember={removeMember} updateMember={updateMember} />
+      <h1 className="text-success text-center">🛒 Quản lý Sản phẩm</h1>
+      <ProductAdd addProduct={addProduct} />
+      <ProductList products={products} removeProduct={removeProduct} updateProduct={updateProduct} />
     </div>
   );
 };
