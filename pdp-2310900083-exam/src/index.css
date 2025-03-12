@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  background-color: #3686d5; /* Màu nền xám nhạt */
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #ae9292; /* Màu chữ tối */
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgb(162, 140, 139);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #ac4c71;
+  text-align: center;
+  font-weight: bold;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  opacity: 0.8;
+}
